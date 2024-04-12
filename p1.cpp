@@ -100,8 +100,7 @@ public:
         fstream file("test.bin", ios::in | ios::out | ios::binary);
         file.seekg(0, ios::end);
 
-        int fileSize = file.tellg();
-        int totalRecords = fileSize / sizeof(Alumno);
+        int totalRecords = file.tellg() / sizeof(Alumno);
 
         if (indice < 0 || indice >= totalRecords) {
             cerr << "Índice fuera de rango." << endl;
